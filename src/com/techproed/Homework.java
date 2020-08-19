@@ -39,9 +39,9 @@ public class Homework {
         driver.navigate().to("https://walmart.com");
         String titleWalmart = driver.getTitle();
         if(titleWalmart.contains("Walmart.com")){
-            System.out.println("Walmart.com var");
+            System.out.println("Walmart.com var"+ titleWalmart);
         }else{
-            System.out.println("Walmart.com yok");
+            System.out.println("Walmart.com yok"+ titleWalmart);
         }
 
         driver.navigate().back();
