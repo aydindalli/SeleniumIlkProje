@@ -11,13 +11,12 @@ public class Day03_LocatorsGiris {
         // Java projemize, chromedriver'ı tanıttık.
         System.setProperty("webdriver.chrome.driver","C:\\Users\\HP\\Documents\\Selenium dependencies\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
         driver.get("http://a.testaddressbook.com/");
 
         // ilk webelementimizi buluyoruz.
-        // "Hamza" -> String
-        // Web sayfasındaki tüm elamanlar -> WebElement
+        // Web sayfasındaki tüm elamanlarin data type (veri tipi) -> WebElement dir
         // webelementimizi id kullanarak bulduk.
         WebElement signInLink = driver.findElement(By.id("sign-in"));
 
@@ -36,14 +35,16 @@ public class Day03_LocatorsGiris {
         // sifreKutusu'nun içerisine yazı gönderiyoruz
         sifreKutusu.sendKeys("Test1234!");
 
-        // sign in butonunu buluyoruz. // name="commit"
+        // sign in butonunu buluyoruz. // name="commit"// bilgisayar otomatik giris yapar click ile
         WebElement signInButonu = driver.findElement(By.name("commit"));
         signInButonu.click();
+
         String baslik = driver.getTitle();
         if(baslik.equals("Address Book")){
             System.out.println("Giriş Başarılı.");
         }else{
             System.out.println("Giriş Başarısız.");
         }
+        // driver.quit();
     }
 }
