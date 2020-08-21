@@ -21,6 +21,7 @@ public class Day05_CssSelector {
         // Eger class name icinde eger bosluk varsa cssSelector kullanmalisiniz
         // cssSelector kullanirken , class value kullaniyorsak .value
         WebElement emailKutusu = driver.findElement(By.cssSelector(".form-control"));
+
         // cssSelector kullanirken , id value kullaniyorsak    #isim
         //WebElement emailKutusu = driver.findElement(By.cssSelector("#session_email"));
         emailKutusu.sendKeys("testtechproed@gmail.com");
